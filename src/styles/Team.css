@@ -1,0 +1,127 @@
+/* =============================================
+   Team Section Styles
+   ============================================= */
+
+.team__marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: var(--space-4) 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.team__track {
+  display: flex;
+  gap: var(--space-6);
+  width: max-content;
+  animation: scrollLeft 40s linear infinite;
+}
+
+.team__track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - calc(var(--space-6) / 2)));
+  }
+}
+
+.team__card {
+  width: 300px;
+  flex-shrink: 0;
+  background: var(--color-primary);
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  border: 1px solid var(--color-border-light);
+  transition: all var(--transition-base);
+}
+
+.team__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.team__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-5);
+  transition: transform var(--transition-base);
+}
+
+.team__card:hover .team__avatar {
+  transform: scale(1.08);
+}
+
+.team__initials {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+}
+
+.team__name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-1);
+  color: var(--color-text-primary);
+}
+
+.team__role {
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-medium);
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.team__bio {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-5);
+}
+
+.team__socials {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all var(--transition-base);
+}
+
+.team__card:hover .team__socials {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team__social {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-accent-gray);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-base);
+}
+
+.team__social:hover {
+  background: var(--color-secondary);
+  color: var(--color-text-white);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .team__card {
+    width: 260px;
+  }
+}

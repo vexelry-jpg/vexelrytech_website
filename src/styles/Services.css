@@ -1,0 +1,110 @@
+/* =============================================
+   Services Section Styles
+   ============================================= */
+
+.services {
+  background: var(--color-accent-gray);
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.services__card {
+  background: var(--color-primary);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.services__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-secondary-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.services__card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: transparent;
+}
+
+.services__card:hover::before {
+  transform: scaleX(1);
+}
+
+.services__card-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-secondary-50);
+  color: var(--color-secondary);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-5);
+  transition: all var(--transition-base);
+}
+
+.services__card:hover .services__card-icon {
+  background: var(--color-secondary);
+  color: var(--color-text-white);
+  transform: scale(1.05);
+}
+
+.services__card-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-3);
+  color: var(--color-text-primary);
+}
+
+.services__card-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+.services__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+  transition: all var(--transition-base);
+}
+
+.services__card-link:hover {
+  gap: var(--space-3);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services__card {
+    padding: var(--space-6);
+  }
+}

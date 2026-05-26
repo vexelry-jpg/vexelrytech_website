@@ -1,0 +1,203 @@
+/* =============================================
+   About Section Styles
+   ============================================= */
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.about__image-wrapper {
+  position: relative;
+}
+
+.about__image-box {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+}
+
+.about__image-placeholder {
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--color-secondary-50), var(--color-secondary-100));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-secondary-200);
+}
+
+.about__image-content {
+  padding: var(--space-8);
+  width: 100%;
+}
+
+.about__img-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.about__img-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  transition: transform var(--transition-base);
+}
+
+.about__img-cell:hover {
+  transform: translateY(-4px);
+}
+
+.about__img-icon {
+  font-size: 2rem;
+}
+
+.about__img-cell span {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.about__experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--color-secondary);
+  color: var(--color-text-white);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-blue-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.about__experience-number {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1;
+}
+
+.about__experience-text {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  opacity: 0.9;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Content */
+.about__content .section-header {
+  margin-bottom: var(--space-6);
+}
+
+.about__text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.about__values {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.about__value {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-accent-gray);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.about__value:hover {
+  background: var(--color-secondary-50);
+  transform: translateX(4px);
+}
+
+.about__value-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about__value-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-1);
+  color: var(--color-text-primary);
+}
+
+.about__value-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Counters */
+.about__counters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.about__counter {
+  text-align: center;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-accent-gray);
+}
+
+.about__counter-number {
+  display: block;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.about__counter-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .about__image-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .about__counters {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .about__experience-badge {
+    right: 10px;
+    bottom: -15px;
+  }
+}
