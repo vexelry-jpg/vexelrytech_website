@@ -8,13 +8,13 @@ const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Features', href: '#features' },
   { label: 'Workflow', href: '#workflow' },
-  { label: 'Case Studies', href: '#case-studies' },
+
   { label: 'Team', href: '#team' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ];
 
-const Navbar = () => {
+const Navbar = ({ openModal }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -92,7 +92,11 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <a href="#contact" className="navbar__cta btn btn--primary btn--sm" onClick={(e) => handleNavClick(e, '#contact')}>
+          <a href="#contact" className="navbar__cta btn btn--primary btn--sm" onClick={(e) => {
+            e.preventDefault();
+            setMobileOpen(false);
+            openModal();
+          }}>
             Get Started
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

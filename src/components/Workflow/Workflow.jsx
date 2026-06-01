@@ -24,22 +24,32 @@ const Workflow = () => {
         </ScrollReveal>
 
         <div className="workflow__timeline">
-          <div className="workflow__line"></div>
-          {steps.map((step, index) => (
-            <ScrollReveal key={index} className="reveal" delay={index * 150}>
-              <div className={`workflow__step ${index % 2 === 0 ? 'workflow__step--left' : 'workflow__step--right'}`}>
-                <div className="workflow__step-content">
-                  <div className="workflow__step-number">{step.number}</div>
-                  <div className="workflow__step-icon">{step.icon}</div>
-                  <h3 className="workflow__step-title">{step.title}</h3>
-                  <p className="workflow__step-description">{step.description}</p>
-                </div>
-                <div className="workflow__step-dot">
-                  <div className="workflow__dot-inner"></div>
-                </div>
+          <div className="workflow__circuit-line"></div>
+          <div className="workflow__circuit-laser"></div>
+          
+          {steps.map((step, index) => {
+            const isTop = index % 2 === 0;
+            return (
+              <div key={index} className="workflow__step-wrapper">
+                <ScrollReveal delay={index * 150} style={{ width: '100%', height: '100%' }}>
+                  <div className={`workflow__step ${isTop ? 'workflow__step--top' : 'workflow__step--bottom'}`}>
+                    <div className="workflow__circuit-node">
+                      <div className="workflow__node-core"></div>
+                      <div className="workflow__node-ring"></div>
+                    </div>
+                    <div className="workflow__step-content">
+                      <div className="workflow__step-number">{step.number}</div>
+                      <div className="workflow__step-header">
+                        <div className="workflow__step-icon">{step.icon}</div>
+                        <h3 className="workflow__step-title">{step.title}</h3>
+                      </div>
+                      <p className="workflow__step-description">{step.description}</p>
+                    </div>
+                  </div>
+                </ScrollReveal>
               </div>
-            </ScrollReveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

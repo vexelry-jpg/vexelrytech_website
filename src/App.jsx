@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './index.css';
 import './styles/animations.css';
 
@@ -9,30 +10,34 @@ import Features from './components/Features/Features';
 import WhyChooseUs from './components/WhyChooseUs/WhyChooseUs';
 import Portfolio from './components/Portfolio/Portfolio';
 import Workflow from './components/Workflow/Workflow';
-import CaseStudies from './components/CaseStudies/CaseStudies';
+
 import Team from './components/Team/Team';
 import FAQ from './components/FAQ/FAQ';
 import Blog from './components/Blog/Blog';
 import Footer from './components/Footer/Footer';
+import EnquiryModal from './components/common/EnquiryModal';
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
-      <Navbar />
+      <Navbar openModal={() => setIsModalOpen(true)} />
       <main>
-        <Hero />
+        <Hero openModal={() => setIsModalOpen(true)} />
         <Services />
         <About />
         <Features />
         <WhyChooseUs />
         <Portfolio />
         <Workflow />
-        <CaseStudies />
+
         <Team />
         <FAQ />
         
       </main>
       <Footer />
+      <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

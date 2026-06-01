@@ -2,7 +2,7 @@ import Button from '../common/Button';
 import '../../styles/Hero.css';
 import logoImg from '../../assets/logo1.png';
 
-const Hero = () => {
+const Hero = ({ openModal }) => {
   return (
     <section className="hero" id="home">
       {/* Background Elements */}
@@ -33,7 +33,7 @@ const Hero = () => {
           </p>
 
           <div className="hero__actions">
-            <Button variant="primary" size="lg" href="#contact"
+            <Button variant="primary" size="lg" onClick={openModal}
               icon={
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path d="M7 4L12 9L7 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
