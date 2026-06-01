@@ -123,5 +123,17 @@
 @media (max-width: 768px) {
   .team__card {
     width: 260px;
+    padding: var(--space-6) var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .team__card {
+    width: 240px;
+    padding: var(--space-5) var(--space-3);
+  }
+  .team__avatar {
+    width: 80px;
+    height: 80px;
   }
 }

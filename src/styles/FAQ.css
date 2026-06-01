@@ -85,3 +85,28 @@
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
 }
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .faq__question {
+    padding: var(--space-4) var(--space-5);
+    font-size: 0.95rem;
+  }
+  .faq__answer-inner {
+    padding: 0 var(--space-5) var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .faq__question {
+    padding: var(--space-4);
+    font-size: 0.9rem;
+  }
+  .faq__answer-inner {
+    padding: 0 var(--space-4) var(--space-4);
+  }
+  .faq__icon {
+    width: 24px;
+    height: 24px;
+  }
+}

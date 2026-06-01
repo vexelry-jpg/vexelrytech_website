@@ -63,9 +63,9 @@ const EnquiryModal = ({ isOpen, onClose }) => {
     e.preventDefault();
     
     // Basic validation
-    if (!formData.firstName.trim() || !formData.email.trim()) {
+    if (!formData.firstName.trim() || !formData.email.trim() || !formData.phone.trim()) {
       setStatus('error');
-      setErrorMessage('First name and email are required.');
+      setErrorMessage('First name, email, and phone number are required.');
       return;
     }
 
@@ -170,13 +170,14 @@ const EnquiryModal = ({ isOpen, onClose }) => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="phone">Phone Number (Optional)</label>
+                <label htmlFor="phone">Phone Number *</label>
                 <input 
                   type="tel" 
                   id="phone" 
                   name="phone" 
                   value={formData.phone} 
                   onChange={handleChange} 
+                  required
                   placeholder="+1 (555) 000-0000"
                 />
               </div>
