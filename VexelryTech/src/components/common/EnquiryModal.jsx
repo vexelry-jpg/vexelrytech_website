@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import '../../styles/EnquiryModal.css';
 
 // REPLACE THIS WITH YOUR ACTUAL WEB3FORMS ACCESS KEY
-const WEB3FORMS_ACCESS_KEY = 'a4496457-dd0a-4b76-a898-cb3a7c7fc2ec';
+const WEB3FORMS_ACCESS_KEY = 'fbee9804-75d9-4015-a976-b49f584e8f0d';
 
 const EnquiryModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
